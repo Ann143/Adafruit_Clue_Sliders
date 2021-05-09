@@ -24,7 +24,8 @@ def display_text(clueValue):
     clue_data[7].text = "Color: R:{}G:{}B:{}C:{}".format(*(clueValue["clueSlider/colorRRange"], clueValue["clueSlider/colorGRange"], clueValue["clueSlider/colorBRange"], clueValue["clueSlider/colorCRange"]))
     clue_data.show()
     
-
+#declare a variable clueData
+#put all the topic of the clueSlider
 clueData = {
     "clueSlider/accelXRange" : 0,
     "clueSlider/accelYRange" : 0,
@@ -45,16 +46,15 @@ clueData = {
     "clueSlider/colorCRange" : 0
 }
 
-
 def on_connect(client, userdata, flags, rc):
     if rc == 0:
-        client.subscribe("clueSlider/#")
-        display_text(clueData)
+        client.subscribe("clueSlider/#") #this the  subscribe topic
+        display_text(clueData) #this diplays the clueData
 
 def on_message(client, userdata, msg):
     print(msg.topic)
     print(msg.payload.decode())
-    clueData[msg.topic]= msg.payload.decode()
+    clueData[msg.topic]= msg.payload.decode() 
     display_text(clueData)
 
 clue_data = clue.simple_text_display(text_scale=2)
