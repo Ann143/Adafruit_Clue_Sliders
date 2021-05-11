@@ -50,14 +50,6 @@
             background: #ed1156;
             cursor: pointer;
         }
-        
-        .slider::-moz-range-thumb {
-            width: 25px;
-            height: 25px;
-            border-radius: 50%;
-            background: #04AA6D;
-            cursor: pointer;
-        }
     </style>
 </head>
 
@@ -65,7 +57,6 @@
     <br><br>
     <center>
         <h1 style="color: white;">Adafruit CLUE Sliders</h1>
-
         <h4 id="status-header" style="color: white;">Connecting...</h4><br><br>
     </center>
 
@@ -77,7 +68,7 @@
                     <h5 class="text text-center font-weight-bolder">Accelerometer</h5>
                     <p>X: <span id="accelXRange">0</span></p>
                     <div class="card-body">
-                        <input type="range" min="-1023" max="1023" value="0" class="slider" name="accelXRange">
+                        <input type="range" min="-1023" max="1023" value="0" class="slider" name="accelXRange" style="background-color:#1aa0b0">
                     </div>
                 </div>
             </div>
@@ -86,7 +77,7 @@
                     <h5 class="text text-center font-weight-bolder">Accelerometer</h5>
                     <p>Y: <span id="accelYRange">0</span></p>
                     <div class="card-body">
-                        <input type="range" min="-1023" max="1023" value="0" class="slider" name="accelYRange">
+                        <input type="range" min="-1023" max="1023" value="0" class="slider" name="accelYRange" style="background-color:#1aa0b0">
                     </div>
                 </div>
             </div>
@@ -95,7 +86,7 @@
                     <h5 class="text text-center font-weight-bolder">Accelerometer</h5>
                     <p>Z: <span id="accelZRange">0</span></p>
                     <div class="card-body">
-                        <input type="range" min="-1023" max="1023" value="0" class="slider" name="accelZRange">
+                        <input type="range" min="-1023" max="1023" value="0" class="slider" name="accelZRange" style="background-color:#1aa0b0">
                     </div>
                 </div>
             </div>
@@ -110,7 +101,7 @@
                     <h5 class="text text-center font-weight-bolder">Gyroscope</h5>
                     <p>X: <span id="gyroXRange">0</span></p>
                     <div class="card-body">
-                        <input type="range" min="-1000" max="1000" value="0" class="slider" name="gyroXRange">
+                        <input type="range" min="-1000" max="1000" value="0" class="slider" name="gyroXRange" style="background-color:#97b01a">
                     </div>
                 </div>
             </div>
@@ -119,7 +110,7 @@
                     <h5 class="text text-center font-weight-bolder">Gyroscope</h5>
                     <p>Y: <span id="gyroYRange">0</span></p>
                     <div class="card-body">
-                        <input type="range" min="-1000" max="1000" value="0" class="slider" name="gyroYRange">
+                        <input type="range" min="-1000" max="1000" value="0" class="slider" name="gyroYRange" style="background-color: #97b01a ">
                     </div>
                 </div>
             </div>
@@ -128,7 +119,7 @@
                     <h5 class="text text-center font-weight-bolder">Gyroscope</h5>
                     <p>Z: <span id="gyroZRange">0</span></p>
                     <div class="card-body">
-                        <input type="range" min="-1000" max="1000" value="0" class="slider" name="gyroZRange">
+                        <input type="range" min="-1000" max="1000" value="0" class="slider" name="gyroZRange" style="background-color: #97b01a">
                     </div>
                 </div>
             </div>
@@ -143,7 +134,7 @@
                     <h5 class="text text-center font-weight-bolder">Magnetic</h5>
                     <p>X: <span id="magneticXRange">0</span></p>
                     <div class="card-body">
-                        <input type="range" min="-1000" max="1000" value="0" class="slider" name="magneticXRange">
+                        <input type="range" min="-1000" max="1000" value="0" class="slider" name="magneticXRange" style="background-color: #edb009">
                     </div>
                 </div>
             </div>
@@ -152,7 +143,7 @@
                     <h5 class="text text-center font-weight-bolder">Magnetic</h5>
                     <p>Y: <span id="magneticYRange">0</span></p>
                     <div class="card-body">
-                        <input type="range" min="-1000" max="1000" value="0" class="slider" name="magneticYRange">
+                        <input type="range" min="-1000" max="1000" value="0" class="slider" name="magneticYRange" style="background-color: #edb009">
                     </div>
                 </div>
             </div>
@@ -161,7 +152,7 @@
                     <h5 class="text text-center font-weight-bolder">Magnetic</h5>
                     <p>Z: <span id="magneticZRange">0</span></p>
                     <div class="card-body">
-                        <input type="range" min="-1000" max="1000" value="0" class="slider" name="magneticZRange">
+                        <input type="range" min="-1000" max="1000" value="0" class="slider" name="magneticZRange" style="background-color: #edb009">
                     </div>
                 </div>
             </div>
@@ -175,9 +166,9 @@
                 <!-- Pressure -->
                 <div class="card" style="width: 25rem;text-align: center;">
                     <h5 class="text text-center font-weight-bolder">Pressure</h5>
-                    <p><span id="pressureRange">0</span></p>
+                    <p><span id="pressureRange">800</span></p>
                     <div class="card-body">
-                        <input type="range" min="-800" max="800" value="0" class="slider" name="pressureRange">
+                        <input type="range" min="800" max="1100" value="0" class="slider" name="pressureRange" style="background-color:  #07e337">
                     </div>
                 </div>
             </div>
@@ -187,7 +178,7 @@
                     <h5 class="text text-center font-weight-bolder">Temperature</h5>
                     <p><span id="tempRange">0</span></p>
                     <div class="card-body">
-                        <input type="range" min="-55" max="55" value="0" class="slider" name="tempRange">
+                        <input type="range" min="-55" max="125" value="0" class="slider" name="tempRange" style="background-color:  #07e337">
                     </div>
                 </div>
             </div>
@@ -197,7 +188,7 @@
                     <h5 class="text text-center font-weight-bolder">Humidity</h5>
                     <p><span id="humidityRange">0</span></p>
                     <div class="card-body">
-                        <input type="range" min="-1000" max="1000" value="0" class="slider" name="humidityRange">
+                        <input type="range" min="0" max="100" value="0" class="slider" name="humidityRange" style="background-color: #07e337">
                     </div>
                 </div>
             </div>
@@ -207,7 +198,7 @@
                     <h5 class="text text-center font-weight-bolder">Proximity</h5>
                     <p><span id="proximityRange">0</span></p>
                     <div class="card-body">
-                        <input type="range" min="-1000" max="1000" value="0" class="slider" name="proximityRange">
+                        <input type="range" min="0" max="255" value="0" class="slider" name="proximityRange" style="background-color:  #07e337">
                     </div>
                 </div>
             </div>
@@ -222,7 +213,7 @@
                     <h5 class="text text-center font-weight-bolder">R-Color</h5>
                     <p><span id="colorRRange">0</span></p>
                     <div class="card-body">
-                        <input type="range" min="-800" max="800" value="0" class="slider" name="colorRRange">
+                        <input type="range" min="0" max="65535" value="0" class="slider" name="colorRRange" style="background-color:  #ffad14">
                     </div>
                 </div>
             </div>
@@ -231,7 +222,7 @@
                     <h5 class="text text-center font-weight-bolder">G-Color</h5>
                     <p><span id="colorGRange">0</span></p>
                     <div class="card-body">
-                        <input type="range" min="-800" max="800" value="0" class="slider" name="colorGRange">
+                        <input type="range" min="0" max="65535" value="0" class="slider" name="colorGRange" style="background-color:  #ffad14">
                     </div>
                 </div>
             </div>
@@ -240,7 +231,7 @@
                     <h5 class="text text-center font-weight-bolder">B-Color</h5>
                     <p><span id="colorBRange">0</span></p>
                     <div class="card-body">
-                        <input type="range" min="-800" max="800" value="0" class="slider" name="colorBRange">
+                        <input type="range" min="0" max="65535" value="0" class="slider" name="colorBRange" style="background-color:  #ffad14">
                     </div>
                 </div>
             </div>
@@ -249,7 +240,7 @@
                     <h5 class="text text-center font-weight-bolder">Light Intensity</h5>
                     <p><span id="colorCRange">0</span></p>
                     <div class="card-body">
-                        <input type="range" min="-800" max="800" value="0" class="slider" name="colorCRange">
+                        <input type="range" min="0" max="65535" value="0" class="slider" name="colorCRange" style="background-color:  #ffad14">
                     </div>
                 </div>
             </div>
@@ -258,5 +249,5 @@
 
 </body>
 <script src="browserMqtt.js"></script>
-<script src="slider.js"></script>
+<script src="telez-mqtt-slider-clue.js"></script>
 <html>

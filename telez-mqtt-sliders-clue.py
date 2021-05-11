@@ -24,7 +24,7 @@ def display_text(clueValue):
     clue_data[7].text = "Color: R:{}G:{}B:{}C:{}".format(*(clueValue["clueSlider/colorRRange"], clueValue["clueSlider/colorGRange"], clueValue["clueSlider/colorBRange"], clueValue["clueSlider/colorCRange"]))
     clue_data.show()
     
-#declare a variable clueData
+#declare a variable clueData wherein
 #put all the topic of the clueSlider
 clueData = {
     "clueSlider/accelXRange" : 0,
@@ -36,7 +36,7 @@ clueData = {
     "clueSlider/magneticXRange" : 0,
     "clueSlider/magneticYRange" : 0,
     "clueSlider/magneticZRange" : 0,
-    "clueSlider/pressureRange" : clue.pressure,
+    "clueSlider/pressureRange" : 800,
     "clueSlider/tempRange" : clue.temperature,
     "clueSlider/humidityRange" : clue.humidity,
     "clueSlider/proximityRange" : clue.proximity,
@@ -47,15 +47,13 @@ clueData = {
 }
 
 def on_connect(client, userdata, flags, rc):
-    if rc == 0:
-        client.subscribe("clueSlider/#") #this the  subscribe topic
-        display_text(clueData) #this diplays the clueData
+    if rc == 0: #if the return code is == 0 
+        client.subscribe("clueSlider/#") #client.subscribe to the topic in a wildcard, it will only read the clueslider and the rest will ignore bec. of the hashtag symbol that means the mullti-level wildcard in the topic
+        display_text(clueData) #passes the argument clueData in the display_text() function
 
 def on_message(client, userdata, msg):
-    print(msg.topic)
-    print(msg.payload.decode())
-    clueData[msg.topic]= msg.payload.decode() 
-    display_text(clueData)
+    clueData[msg.topic]= msg.payload.decode() #if the topic is equal to payload
+    display_text(clueData) #display the value of specific components 
 
 clue_data = clue.simple_text_display(text_scale=2)
 
